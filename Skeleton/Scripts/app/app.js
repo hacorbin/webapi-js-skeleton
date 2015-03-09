@@ -31,7 +31,7 @@
             var ractive = new Ractive({
                 el: $('#target'),
                 template: template,
-                data: function (data) {
+                data: function () {
                     return AboutModel;
                 }
             });
@@ -43,7 +43,7 @@
             var ractive = new Ractive({
                 el: $('#target'),
                 template: template,
-                data: function (data) {
+                data: function () {
                     return StackModel;
                 }
             });
@@ -51,7 +51,15 @@
     });
 
     page('*', function () {
-        console.log('Not found');
+        $.get('/Scripts/app/views/404.html', function (template) {
+            var ractive = new Ractive({
+                el: $('#target'),
+                template: template,
+                data: function () {
+                    return NotFoundModel;
+                }
+            });
+        });
     });
 
     page({popstate: false, click: true, dispatch: true});

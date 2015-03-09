@@ -189,8 +189,10 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\css\main.css" />
     <Content Include="Scripts\app\factories\app-api.js" />
+    <Content Include="Scripts\app\models\404-model.js" />
     <Content Include="Scripts\app\models\about-model.js" />
     <Content Include="Scripts\app\models\stack-model.js" />
+    <Content Include="Scripts\app\views\404.html" />
     <Content Include="Scripts\app\views\about.html" />
     <Content Include="Scripts\app\views\stack.html" />
     <Content Include="Scripts\bower_components\bootstrap\dist\css\bootstrap-theme.css" />

@@ -13,12 +13,10 @@ namespace Skeleton
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-          //  routes.IgnoreRoute("{about}/{*pathInfo}");
-
             
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}",
+                url: "{*catchall}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
