@@ -1,0 +1,23 @@
+﻿{{title}}
+
+{{#players.length}}
+    <div class="pull-right">
+        Page: &nbsp;{{page+1}}&nbsp;of&nbsp;{{pages-1}}
+    </div>
+    <table class="table table-bordered">
+        <tr><th>Name</th><th>Sport</th></tr>
+		{{#collection:i}}
+			<tr><td>{{name}}</td><td>{{sport}}</td></tr>
+		{{/collection}}
+
+    </table>
+		{{#pages > 1}}
+			<div class="pull-right">
+				<a on-click="first()">First</a> |
+                <a on-click="previous()">Previous</a> |
+                <a on-click="next()">Next</a> |
+                <a on-click="last()">Last</a>
+			</div>
+		{{/}}
+        
+{{/players.length}}
