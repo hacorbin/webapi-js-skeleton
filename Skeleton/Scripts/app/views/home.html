@@ -1,0 +1,8 @@
+﻿<h3>{{title}}</h3>
+<p>
+<ul>
+    {{#languages}}
+        <li   onclick="HomeModel.choose(this, '{{this.Name}}')" >{{this.Name}} - {{this.Description}}</li>
+    {{/languages}}
+</ul>
+</p>

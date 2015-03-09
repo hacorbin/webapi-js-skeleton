@@ -1,0 +1,4 @@
+﻿{{content.title}}
+<ul>
+    <li data-repeat="item in content.languages" data-click="print(item)">{{item}}</li>
+</ul>
