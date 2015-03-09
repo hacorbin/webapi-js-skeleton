@@ -1,5 +1,7 @@
-﻿var HomeModel = function () {
-    var languages = [];
+﻿var HomeModel = function (ctx) {
+    var languages = [],
+        context = (ctx ? ctx : this);
+
     return {
         "title": "Home Page",
         "languages": languages,

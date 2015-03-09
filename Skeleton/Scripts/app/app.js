@@ -6,7 +6,7 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    var model = new HomeModel();
+                    var model = new HomeModel(this);
                     model.init(this);
                     return model;
                 }
@@ -20,7 +20,7 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    var model = new HomeModel();
+                    var model = new HomeModel(this);
                     model.init(this);
                     return model;
                 }
@@ -34,7 +34,7 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    var model = new AboutModel();
+                    var model = new AboutModel(this);
                     return model;
                 }
             });
@@ -47,7 +47,7 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    var model = new StackModel();
+                    var model = new StackModel(this);
                     return model;
                 }
             });
@@ -60,7 +60,7 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    var model = new NotFoundModel();
+                    var model = new NotFoundModel(this);
                     return model;
                 }
             });

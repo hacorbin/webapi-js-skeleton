@@ -1,4 +1,6 @@
-﻿var StackModel = function () {
+﻿var StackModel = function (ctx) {
+    var context = (ctx ? ctx : this);
+
     return {
         "title": "Meet the Stack",
         "items": [
