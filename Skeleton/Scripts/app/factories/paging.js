@@ -1,4 +1,4 @@
-﻿var paging = function (ctx, currentDataName, allData) {
+﻿var Pager = function (ctx, currentDataName, allData) {
     var context = ctx;
     var first =  function() {
         context.set('page', 0);

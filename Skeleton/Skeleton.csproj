@@ -189,6 +189,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\app\css\main.css" />
     <Content Include="Scripts\app\factories\app-api.js" />
+    <Content Include="Scripts\app\factories\paging.js" />
     <Content Include="Scripts\app\models\404-model.js" />
     <Content Include="Scripts\app\models\about-model.js" />
     <Content Include="Scripts\app\models\paging-model.js" />

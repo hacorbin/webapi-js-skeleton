@@ -1,26 +1,27 @@
-﻿var HomeModel = function (ctx, api) {
+﻿var HomeModel = function (api, template) {
     var languages = [],
-        context = (ctx ? ctx : this);
+        title = "Home Page";
 
-    return {
-        "title": "Home Page",
-        "languages": languages,
-        "init": function (ctx) {
-            if (languages.length == 0) {
-                api.getLanguages()
-                    .then(function (res) {
-                        console.dir(res);
-                        //use the context from RACtive to update the data model bound to the view
-                        ctx.set('languages', res);
-                    }, function (err) {
-                        console.dir(err);
-                    });
-            }
-        },
-        "choose": function (element, lang, render) {
-            console.log(lang + ' clicked');
-            console.dir(element);
-            element.style.color = 'red';
-        }
+    var getLanguages = function (ctx) {
+        api.getLanguages()
+            .then(function (res) {
+                console.dir(res);
+                //use the context from RACtive to update the data model bound to the view
+                ctx.set('languages', res);
+            }, function (err) {
+                console.dir(err);
+            });
     };
+
+    return new Ractive({
+        el: $('#target'),
+        template: template,
+        onrender: function () {
+            getLanguages(this);
+        },
+        data: {
+            title: title,
+            languages: []
+        }
+    });
 }

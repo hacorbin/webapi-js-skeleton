@@ -1,6 +1,11 @@
-﻿var AboutModel = function (ctx, api) {
-    var context = (ctx ? ctx : this);
-    return {
-        "title": "About Page"
-    };
+﻿var AboutModel = function (api, template) {
+    var title = "About Page";
+
+    return new Ractive({
+        el: $('#target'),
+        template: template,
+        data: {
+            title: title
+        }
+    });
 };
