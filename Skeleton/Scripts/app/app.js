@@ -1,12 +1,14 @@
 ﻿    'use strict';
-   
+    
+    var api = api ? api : new appApi();
+
     page('/', function () {
         $.get('/Scripts/app/views/home.html', function (template) {
             var ractive = new Ractive({
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    var model = new HomeModel(this);
+                    var model = new HomeModel(this, api);
                     model.init(this);
                     return model;
                 }
@@ -20,7 +22,7 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    var model = new HomeModel(this);
+                    var model = new HomeModel(this, api);
                     model.init(this);
                     return model;
                 }
@@ -34,7 +36,7 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    var model = new AboutModel(this);
+                    var model = new AboutModel(this, api);
                     return model;
                 }
             });
@@ -47,7 +49,7 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    var model = new StackModel(this);
+                    var model = new StackModel(this, api);
                     return model;
                 }
             });
@@ -60,7 +62,7 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    var model = new NotFoundModel(this);
+                    var model = new NotFoundModel(this, api);
                     return model;
                 }
             });

@@ -1,4 +1,4 @@
-﻿var HomeModel = function (ctx) {
+﻿var HomeModel = function (ctx, api) {
     var languages = [],
         context = (ctx ? ctx : this);
 

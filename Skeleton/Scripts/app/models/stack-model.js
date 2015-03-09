@@ -1,4 +1,4 @@
-﻿var StackModel = function (ctx) {
+﻿var StackModel = function (ctx, api) {
     var context = (ctx ? ctx : this);
 
     return {
