@@ -6,8 +6,9 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    HomeModel.init(this);
-                    return HomeModel;
+                    var model = new HomeModel();
+                    model.init(this);
+                    return model;
                 }
             });
         });
@@ -19,8 +20,9 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    HomeModel.init(this);
-                    return HomeModel;
+                    var model = new HomeModel();
+                    model.init(this);
+                    return model;
                 }
             });
         });
@@ -32,7 +34,8 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    return AboutModel;
+                    var model = new AboutModel();
+                    return model;
                 }
             });
         });
@@ -44,7 +47,8 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    return StackModel;
+                    var model = new StackModel();
+                    return model;
                 }
             });
         });
@@ -56,7 +60,8 @@
                 el: $('#target'),
                 template: template,
                 data: function () {
-                    return NotFoundModel;
+                    var model = new NotFoundModel();
+                    return model;
                 }
             });
         });

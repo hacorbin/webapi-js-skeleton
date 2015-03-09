@@ -1,3 +1,5 @@
-﻿var AboutModel = {
-    "title": "About Page"
+﻿var AboutModel = function () {
+    return {
+        "title": "About Page"
+    };
 };

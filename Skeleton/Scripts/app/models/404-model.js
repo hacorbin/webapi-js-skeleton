@@ -1,3 +1,5 @@
-﻿var NotFoundModel = {
-    "title": "404: Resource Not Found."
+﻿var NotFoundModel = function () {
+    return {
+        "title": "404: Resource Not Found."
+    };
 };
