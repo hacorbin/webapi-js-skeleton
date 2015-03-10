@@ -1,4 +1,5 @@
-﻿using Skeleton.Models;
+﻿using Skeleton.Infrastructure;
+using Skeleton.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,12 +11,19 @@ namespace Skeleton.Controllers
 {
     public class ValuesController : ApiController
     {
-        // GET api/values
-        public IEnumerable<Language> Get()
+        private IData<Language> language;
+
+        public ValuesController(IData<Language> repo)
         {
-            List<Language> languages = new List<Language>(){new Language() { Name = "JavaScript", Description = "Best Language Ever." },
-                                                            new Language() { Name = "C#", Description = "Favorite Server Side Language" },
-                                                            new Language() { Name = "PHP", Description = "WordPress bitch." }};
+            language = repo;
+        }
+
+        // GET api/values
+        public IEnumerable<Skeleton.Models.Language.LanguageData> Get()
+        {
+            List<Skeleton.Models.Language.LanguageData> languages = new List<Skeleton.Models.Language.LanguageData>(){new Skeleton.Models.Language.LanguageData() { Name = "JavaScript", Description = "Best Language Ever." },
+                                                            new Skeleton.Models.Language.LanguageData() { Name = "C#", Description = "Favorite Server Side Language" },
+                                                            new Skeleton.Models.Language.LanguageData() { Name = "PHP", Description = "WordPress bitch." }};
 
             return languages;
         }

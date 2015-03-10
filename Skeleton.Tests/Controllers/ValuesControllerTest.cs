@@ -18,10 +18,10 @@ namespace Skeleton.Tests.Controllers
         public void Get()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            ValuesController controller = new ValuesController(new Language());
 
             // Act
-            IEnumerable<Language> result = controller.Get();
+            IEnumerable<Skeleton.Models.Language.LanguageData> result = controller.Get();
 
             // Assert
             Assert.IsNotNull(result);
@@ -31,7 +31,7 @@ namespace Skeleton.Tests.Controllers
         public void GetById()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            ValuesController controller = new ValuesController(new Language());
 
             // Act
             string result = controller.Get(5);
@@ -44,7 +44,7 @@ namespace Skeleton.Tests.Controllers
         public void Post()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            ValuesController controller = new ValuesController(new Language());
 
             // Act
             controller.Post("value");
@@ -56,7 +56,7 @@ namespace Skeleton.Tests.Controllers
         public void Put()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            ValuesController controller = new ValuesController(new Language());
 
             // Act
             controller.Put(5, "value");
@@ -68,7 +68,7 @@ namespace Skeleton.Tests.Controllers
         public void Delete()
         {
             // Arrange
-            ValuesController controller = new ValuesController();
+            ValuesController controller = new ValuesController(new Language());
 
             // Act
             controller.Delete(5);

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Ninject;
+using Skeleton.Controllers;
+using Skeleton.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -21,7 +24,11 @@ namespace Skeleton
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-         //   BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var kernel = new StandardKernel();
+            kernel.Bind(typeof(IData<>)).To(typeof(Skeleton.Models.Language)).WhenInjectedInto<ValuesController>();
+           
+            GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
         }
     }
 }
